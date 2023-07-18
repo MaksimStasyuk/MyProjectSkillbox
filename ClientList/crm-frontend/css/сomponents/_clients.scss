@@ -1,0 +1,652 @@
+@import '../variables';
+@import '../mixin';
+
+.clients {
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 40px 70px 252px;
+    }
+
+    &__title {
+        @include title();
+        margin-bottom: 18px;
+
+    }
+
+    &__table-wrap {
+        width: 100%;
+    }
+
+    &__table {
+        width: 100%;
+    }
+
+    &__btn {
+        align-self: center;
+        display: flex;
+        align-items: center;
+        padding: 14px 26px;
+        border: 1px solid $color_firm;
+        background-color: transparent;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 19px;
+        color: $color_firm;
+        transition: color .3s ease-in-out,
+            background-color .3s ease-in-out;
+
+        svg {
+            display: block;
+            margin-right: 10px;
+            fill: $color_firm;
+            transition: fill .3s ease-in-out;
+        }
+
+        &:hover {
+            background-color: $color_firm_hover;
+            color: $color_white;
+        }
+
+        &:hover svg {
+            fill: $color_white;
+        }
+
+        &:active {
+            background-color: $color_firm;
+        }
+    }
+}
+
+.table {
+    margin-bottom: 40px;
+    border-collapse: collapse;
+
+    // Шапка таблицы
+
+    &__head-th {
+        padding-top: 8px;
+        padding-bottom: 8px;
+        text-align: left;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 16px;
+        color: $color_txt_grey;
+        cursor: pointer;
+        user-select: none;
+
+        &_id {
+            padding-left: 20px;
+            padding-right: 20px;
+            @include hoverHeadTable;
+
+            span {
+                color: transparent;
+                white-space: nowrap;
+            }
+
+            span::after {
+                content: ' ';
+                display: inline-block;
+                width: 8px;
+                height: 8px;
+                background-image: url(../img/arrow.svg);
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-color: transparent;
+                background-size: cover;
+            }
+        }
+
+        &_id.arrow-turn span::after {
+            background-image: url(../img/arrowTurn.svg);
+        }
+
+        &_fio {
+            padding-right: 40px;
+            white-space: nowrap;
+            @include hoverHeadTable;
+
+            span {
+                margin-left: 2px;
+                padding-left: 10px;
+                background-image: url(../img/arrow.svg);
+                background-position: left center;
+                background-repeat: no-repeat;
+                background-color: transparent;
+                background-size: 8px 8px;
+                white-space: nowrap;
+                font-weight: 600;
+                font-size: 10px;
+                line-height: 14px;
+                color: $color_firm;
+            }
+        }
+
+        &_fio.arrow-turn span {
+            background-image: url(../img/arrowTurn.svg);
+        }
+
+        &_date {
+            padding-right: 30px;
+            white-space: nowrap;
+            @include hoverHeadTable;
+
+            span {
+                color: transparent;
+                white-space: nowrap;
+            }
+
+            span::after {
+                content: ' ';
+                display: inline-block;
+                width: 8px;
+                height: 8px;
+                background-image: url(../img/arrow.svg);
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-color: transparent;
+                background-size: cover;
+            }
+        }
+
+        &_date.arrow-turn span::after {
+            background-image: url(../img/arrowTurn.svg);
+        }
+
+        &_changes {
+            padding-right: 30px;
+            white-space: nowrap;
+            @include hoverHeadTable;
+
+            span {
+                color: transparent;
+                white-space: nowrap;
+            }
+
+            span::after {
+                content: ' ';
+                display: inline-block;
+                width: 8px;
+                height: 8px;
+                background-image: url(../img/arrow.svg);
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-color: transparent;
+                background-size: cover;
+            }
+        }
+
+        &_changes.arrow-turn span::after {
+            background-image: url(../img/arrowTurn.svg);
+        }
+
+        &_contacts {
+            padding-right: 52px;
+            cursor: none;
+        }
+
+        &_actions {
+            cursor: none;
+        }
+    }
+
+    //Тело таблицы
+
+    &__body {
+        position: relative;
+        background-color: $color_white;
+    }
+
+    &__body-tr {
+        border-bottom: 1px solid $color_line_grey;
+    }
+
+    &__body-th {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 19px;
+        color: $color_black;
+
+        &_id {
+            padding-left: 20px;
+            padding-right: 20px;
+            text-align: left;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 16px;
+            color: $color_txt_grey;
+        }
+
+        &_fio {
+            padding-right: 40px;
+            text-align: left;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 19px;
+            color: $color_black;
+        }
+
+        &_date {
+            padding-right: 30px;
+            text-align: left;
+        }
+
+        &_changes {
+            padding-right: 30px;
+            text-align: left;
+        }
+
+        &_contacts {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-right: 52px;
+            // width: 138px;
+        }
+
+        &_actions {
+            padding-right: 20px;
+        }
+    }
+}
+
+.tbody-th-date {
+    &__wrap {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    &__year {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 19px;
+        color: $color_black;
+    }
+
+    &__time {
+        margin-left: 7px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 19px;
+        color: $color_txt_grey;
+    }
+}
+
+.tbody-th-changes {
+    &__wrap {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    &__year {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 19px;
+        color: $color_black;
+    }
+
+    &__time {
+        margin-left: 7px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 19px;
+        color: $color_txt_grey;
+    }
+}
+
+.tbody-th-contacts {
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 7px;
+    }
+
+    &__btn {
+        border: 1px solid $color_firm;
+        border-radius: 50%;
+        width: 16px;
+        height: 16px;
+        font-weight: 600;
+        font-size: 8px;
+        line-height: 11px;
+        color: $color_black;
+        text-align: center;
+    }
+
+    &__link {
+        position: relative;
+        display: block;
+        width: 16px;
+        height: 16px;
+
+        &:hover svg {
+            opacity: 1;
+        }
+
+        &:hover .contacts-link__tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+.contacts-link {
+    svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+        opacity: .7;
+        transition: opacity .3s ease-in-out;
+    }
+
+    &__tooltip {
+        position: absolute;
+        left: 50%;
+        bottom: 180%;
+        padding: 8px 14px;
+        background-color: $color_black;
+        white-space: nowrap;
+        transform: translateX(-50%);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity ease-in-out .3s,
+            visibility ease-in-out .3s;
+
+        &::after {
+            content: ' ';
+            position: absolute;
+            top: 99%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 9px 6px 0 6px;
+            border-color: $color_black transparent transparent transparent;
+            transform: translateX(-50%);
+            transition: opacity ease-in-out .3s,
+                visibility ease-in-out .3s;
+        }
+    }
+}
+
+.tbody-th-actions {
+    &__wrap {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    &__btn-change {
+        display: flex;
+        align-items: center;
+        margin-right: 32px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 19px;
+        color: $color_black;
+        transition: color .3s ease-in-out;
+
+        &:hover {
+            color: $color_firm;
+        }
+
+        svg {
+            margin-right: 2px;
+        }
+    }
+
+    &__btn-delete {
+        display: flex;
+        align-items: center;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 19px;
+        color: $color_black;
+        transition: color .3s ease-in-out;
+
+        &:hover {
+            color: $color_red;
+        }
+
+        svg {
+            margin-right: 3px;
+        }
+    }
+}
+
+.tooltip {
+    &__text {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 16px;
+        color: $color_white;
+    }
+
+    &__link {
+        position: relative;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 16px;
+        color: $color_white;
+        text-decoration: inherit;
+        transition: color ease-in-out .3s;
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0px;
+            height: 1px;
+            width: 100%;
+            background-color: $color_hover_tooltip;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity ease-in-out .3s,
+                visibility ease-in-out .3s;
+        }
+
+        &:hover {
+            color: $color_hover_tooltip;
+        }
+
+        &:hover::after {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+
+    .clients {
+        &__content {
+            padding: 40px 0 104px;
+        }
+    }
+
+    .table {
+        &__head-th {
+            &_id {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            &_fio {
+                padding-right: 20px;
+            }
+
+            &_date {
+                white-space: normal;
+            }
+
+            &_changes {
+                white-space: normal;
+            }
+
+            &_contacts {
+                padding-right: 45px;
+            }
+        }
+
+        &__body-th {
+            &_id {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            &_fio {
+                padding-right: 20px;
+            }
+
+            &_changes {
+                padding-right: 28px;
+            }
+
+            &_contacts {
+                padding-right: 42px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1010px) {
+    .table {
+        &__body-th {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+    }
+
+    .tbody-th-date {
+        &__wrap {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        &__time {
+            margin-left: 0;
+        }
+    }
+
+    .tbody-th-changes {
+        &__wrap {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        &__time {
+            margin-left: 0;
+        }
+    }
+
+    .tbody-th-actions {
+        &__wrap {
+            flex-direction: column;
+        }
+
+        &__btn-change {
+            margin-right: 0px;
+            margin-bottom: 5px;
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .table {
+        &__head-th {
+            &_id {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            &_fio {
+                padding-right: 15px;
+            }
+
+            &_date {
+                padding-right: 10px;
+            }
+
+            &_changes {
+                padding-right: 10px;
+            }
+
+            &_contacts {
+                padding-right: 15px;
+            }
+
+            &_actions {
+                padding-right: 15px;
+            }
+        }
+
+        &__body-th {
+            &_id {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            &_fio {
+                padding-right: 15px;
+            }
+
+            &_date {
+                padding-right: 10px;
+            }
+
+            &_changes {
+                padding-right: 10px;
+            }
+
+            &_contacts {
+                padding-right: 15px;
+            }
+
+            &_actions {
+                padding-right: 15px;
+            }
+        }
+    }
+}
+
+@media (max-width:750px) {
+    .clients {
+        &__table-wrap {
+            width: 100%;
+            overflow-x: auto;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+
+        &__table {
+            overflow-x: scroll;
+            white-space: nowrap;
+        }
+    }
+
+    .table {
+        &__body-th {
+            &_fio {
+                white-space: normal;
+            }
+        }
+    }
+}
+
+@media (max-width:500px) {
+    .clients {
+        &__content {
+            padding: 30px 0px 176px;
+        }
+
+        &__title {
+            margin-bottom: 12px;
+        }
+    }
+}

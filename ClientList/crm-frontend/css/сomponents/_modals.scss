@@ -1,0 +1,430 @@
+@import '../variables';
+@import '../mixin';
+
+.modal {
+  @include modalOverlay();
+  @include modalActive();
+
+  &__content {
+    @include modalContent();
+    @include modalActive();
+    padding: 30px;
+  }
+
+  &__title {
+    @include title-modal();
+    margin-bottom: 30px;
+
+  }
+
+  &__title-id {
+    margin-left: 9px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: $color_txt_grey;
+
+  }
+
+  &__close {
+    @include modalClose();
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    width: 390px;
+
+    &:not(:last-child) {
+      margin-bottom: 28px;
+    }
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    margin-bottom: 25px;
+  }
+
+  &__field {
+    padding: 4px 0;
+    border: 0;
+    width: 100%;
+    border-bottom: 1px solid $color_line_grey;
+    background-color: transparent;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    color: $color_black;
+    appearance: none;
+  }
+
+  &__field::placeholder {
+    opacity: 0;
+    transition: opacity .3s;
+  }
+
+  &__field:focus-within::placeholder,
+  &__field:focus::placeholder {
+    opacity: 1;
+  }
+
+  &__field:focus {
+    outline: none;
+  }
+
+  &__field:not(:placeholder-shown)+&__label,
+  &__field:focus+&__label {
+    font-size: 10px;
+    line-height: 14px;
+    transform: translateY(-15px) scale(1);
+    cursor: pointer;
+  }
+
+  &__label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    color: $color_txt_grey;
+    transform: translateY(4px) scale(1);
+    transition: transform ease-in-out .1s;
+
+    &::after {
+      content: '*';
+      color: $color_firm;
+
+    }
+  }
+
+  &__contact {
+    margin: 0 -30px 25px;
+    padding: 0px 30px;
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    background-color: $color_bg_grey;
+  }
+
+  &__error {
+
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    text-align: center;
+    color: $color_red;
+
+  }
+
+
+
+  &__btn-save {
+    @include btnModal();
+    margin-bottom: 5px;
+
+  }
+
+  &__btn-cancel {
+    @include btnCancel();
+  }
+
+}
+
+.modal-contact {
+  &__btn {
+    margin: 0 auto;
+    padding: 8px 20px;
+    display: none;
+    align-items: center;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    color: $color_black;
+    transition: color ease-in-out .3s;
+
+    &::before {
+      content: ' ';
+      display: inline-block;
+      margin-right: 5px;
+      width: 14px;
+      height: 14px;
+      background-image: url(../img/add_contact.svg);
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-color: transparent;
+      background-size: cover;
+      transition: background-image ease-in-out .3s;
+    }
+
+    &:hover {
+      color: $color_firm;
+    }
+
+    &:hover::before {
+      background-image: url(../img/add_contact_hover.svg);
+    }
+
+    &_active {
+      display: flex;
+    }
+  }
+
+  &__form {
+    display: flex;
+    justify-content: space-between;
+    // width: 390px;
+    margin-bottom: 15px;
+    // margin: 15px;
+  }
+
+
+  &__choice-wrapp {
+    position: relative;
+
+    border: 1px solid $color_grey;
+  }
+
+  &__name {
+    position: relative;
+    padding: 10px 12px 10px 12px;
+    // border-right: 1px solid $color_grey;
+    width: 122px;
+    height: 100%;
+    background-color: $color_modul_element_bg;
+    z-index: 1;
+    text-align: left;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: $color_black;
+    transition: color ease-in-out .3s;
+
+    &::after {
+      content: ' ';
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      display: inline-block;
+      width: 10px;
+      height: 6px;
+      background-image: url(../img/arrow-down.svg);
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-color: transparent;
+      background-size: cover;
+      transform: translateY(-50%);
+      transition: background-image ease-in-out .3s;
+    }
+
+    &:hover {
+      color: $color_firm;
+    }
+
+    &_active {
+      &::after {
+        background-image: url(../img/arrow-up.svg);
+
+      }
+    }
+  }
+
+  &__list {
+    position: absolute;
+    left: -1px;
+    top: 100%;
+    padding: 10px 12px;
+    border: 1px solid $color_grey;
+    background-color: $color_modul_item-select_bg;
+    width: 124px;
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity ease-in-out .3s,
+      visibility ease-in-out .3s, ;
+
+    &_active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+
+
+
+  &__item {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: $color_black;
+    transition: color ease-in-out .3s;
+
+    &:not(:last-child) {
+      margin-bottom: 9px;
+    }
+
+    &:hover {
+      cursor: pointer;
+      color: $color_firm;
+    }
+
+    // outline: 1px solid $color_grey;
+    // border-top: none;
+    // border-right: 1px solid $color_grey;
+    // border-bottom: 1px solid $color_grey;
+
+  }
+
+  &__field {
+    // flex-shrink: 0;
+    padding: 0;
+    padding: 8px 12px 9px 12px;
+    width: 240px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    border: 1px solid $color_grey;
+    border-left: none;
+    border-right: none;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    color: $color_black;
+
+    &::placeholder {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 19px;
+      color: $color_txt_grey;
+    }
+
+  }
+
+  &__btn-delete {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 13px 7px 12px 8px;
+    // border: 1px solid transparent;
+    border: 1px solid $color_grey;
+    width: 27px;
+    background-color: $color_modul_element_bg;
+    // transform: translateX(1px);
+    transition: border ease-in-out .3s;
+
+    // &::after {
+    //   content: '';
+    //   position: absolute;
+    //   width: 28px;
+    //   height: 100%;
+    //   top: -1px;
+    //   right: -1px;
+    //   bottom: 0px;
+    //   left: 0px;
+    //   border: 1px solid green;
+    // }
+
+    svg {
+      display: block;
+      width: 12px;
+      height: 12px;
+      fill: $color_grey;
+      transition: fill ease-in-out .3s;
+    }
+
+    &:hover {
+      border: 1px solid $color_red;
+    }
+
+    &:hover svg {
+      fill: $color_red;
+    }
+
+
+    &:hover .modal-contact__tooltip {
+      opacity: 1;
+      visibility: visible;
+
+    }
+  }
+
+  &__tooltip {
+    position: absolute;
+    display: block;
+    left: 50%;
+    bottom: 180%;
+    padding: 8px 14px;
+    background-color: $color_black;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 16px;
+    color: $color_white;
+    white-space: nowrap;
+    transform: translateX(-50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity ease-in-out .3s,
+      visibility ease-in-out .3s;
+
+    &::after {
+      content: ' ';
+      position: absolute;
+      top: 99%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 9px 6px 0 6px;
+      border-color: $color_black transparent transparent transparent;
+      transform: translateX(-50%);
+      transition: opacity ease-in-out .3s,
+        visibility ease-in-out .3s;
+    }
+
+
+  }
+}
+
+// .tooltip {
+//   &__text {
+//       font-weight: 400;
+//       font-size: 12px;
+//       line-height: 16px;
+//       color: $color_white;
+//   }
+
+//   &__link {
+//       position: relative;
+//       font-weight: 700;
+//       font-size: 12px;
+//       line-height: 16px;
+//       color: $color_white;
+//       text-decoration: inherit;
+//       transition: color ease-in-out .3s;
+
+//       &::after {
+//           content: '';
+//           position: absolute;
+//           left: 0;
+//           bottom: 0px;
+//           height: 1px;
+//           width: 100%;
+//           background-color: $color_hover_tooltip;
+//           opacity: 0;
+//           visibility: hidden;
+//           transition: opacity ease-in-out .3s,
+//               visibility ease-in-out .3s;
+//       }
+
+//       &:hover {
+//           color: $color_hover_tooltip;
+//       }
+
+//       &:hover::after {
+//           opacity: 1;
+//           visibility: visible;
+//       }
+//   }
+// }

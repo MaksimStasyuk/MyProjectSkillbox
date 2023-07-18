@@ -1,0 +1,44 @@
+.delete-modal {
+  @include modalOverlay();
+  @include modalActive();
+
+  &__content {
+    @include modalContent();
+    @include modalActive();
+    padding: 22px 88px 27px 88px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+  }
+
+  &__close {
+    @include modalClose();
+  }
+
+  &__title {
+    @include title-modal();
+    margin-bottom: 11px;
+  }
+
+  &__distr {
+    margin: 0;
+    margin-bottom: 25px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    text-align: center;
+    color: $color_black;
+  }
+
+  &__btn-delete {
+    @include btnModal();
+    margin-bottom: 5px;
+  }
+
+  &__btn-cancel {
+    @include btnCancel();
+  }
+
+}
