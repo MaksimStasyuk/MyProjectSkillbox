@@ -1,0 +1,165 @@
+* {
+    box-sizing: border-box;
+}
+
+/* .list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+} */
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
+.game {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.title {
+    margin: 0;
+    margin-bottom: 15px;
+    padding-top: 15px;
+    font-size: 38px;
+    text-align: center;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    width: 15%;
+    height: 200px;
+    border: 1px solid rgb(70, 23, 114);
+    border-radius: 10px;
+    background-color: rgb(70, 23, 114);
+    color: transparent;
+    font-size: 42px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: background-color .15s, color .15s, transform .15s;
+
+}
+
+.card.open {
+    background-color: white;
+    color: black;
+}
+
+.card.success {
+    background-color: rgb(33, 178, 33);
+    color: white;
+    transform: scale(0.95);
+}
+
+.titleVictory {
+    margin: 0;
+    font-size: 32px;
+    padding-top: 25px;
+    text-align: center;
+}
+
+.btnNewGame {
+    display: block;
+    /* justify-self: center; */
+    margin: 15px auto;
+    padding: 25px 35px;
+    /* border: 2px solid rgb(20, 20, 18); */
+    border-radius: 3px;
+    font-size: 24px;
+    color: white;
+    background-color: purple;
+    opacity: .7;
+    cursor: pointer;
+    transition: opacity .5s;
+}
+
+.btnNewGame:hover {
+    opacity: 1;
+}
+
+
+.img {
+    width: 85%;
+    border-radius: 100%;
+    opacity: 0;
+}
+
+.img.open {
+    opacity: 1;
+}
+
+/*
+
+
+.game__field {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0;
+  border: 2px solid rgb(25, 27, 26);
+  max-width: 80%;
+  background-color: rgb(112, 221, 156);
+}
+
+.game__item {
+  flex: 0 1 25%;
+  padding: 15px;
+}
+
+.game__card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 25px;
+  border: 2px solid black;
+  border-radius: 10px;
+  background: linear-gradient(to right bottom, #a7d4d6, #8bbbbf, #70a2a8, #558a92, #39737d, #2b636b, #1c535a, #0d4349, #0e3638, #0e2929, #0c1d1c, #02100e);
+  box-shadow: 0px 0px 8px 3px rgba(205, 242, 203, 0.19);
+  color: transparent;
+  font-size: 75px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.game__card.open {
+  background: radial-gradient(circle, #09595c, #005553, #005149, #004c3f, #004835, #09543e, #136047, #1d6c50, #2d8e73, #3eb198, #4ed5c1, #5ffbec);
+  color: white;
+}
+
+.game__card.dublle {
+  background: radial-gradient(circle, #4e091c, #5e0c26, #6f0e31, #7f113d, #90154b, #972664, #9a377e, #984998, #7e65b8, #597ecc, #2d93d3, #0aa5d1);
+  color: plum;
+}
+
+.game__btn {
+  display: block;
+  margin: 15px auto;
+  padding: 10px 20px;
+  border: 2px solid rgb(20, 20, 18);
+  border-radius: 3px;
+  font: inherit;
+  color: white;
+  background-color: rgb(199, 43, 118);
+  cursor: pointer;
+  visibility: hidden;
+  opacity: 0;
+  transition: background-color .5s cubic-bezier(0.1, 0.8, 0.5, 2);
+}
+
+.game__btn:hover {
+  background-color: rgb(110, 23, 64);
+}
+
+.game__btn.active {
+  visibility: visible;
+  opacity: 1;
+} */
