@@ -1,0 +1,343 @@
+@mixin clearListReset {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+@mixin makeContainer {
+    margin: 0 auto;
+    padding: 0 25px;
+
+    @media (max-width: 1280px) {
+        padding: 0 36px;
+    }
+
+    @media (max-width: 768px) {
+        padding: 0 72px;
+    }
+
+    @media (max-width: 700px) {
+        padding: 0 36px;
+    }
+
+    @media (max-width: 500px) {
+        padding: 0 12px;
+    }
+}
+
+@mixin title {
+    margin: 0;
+    margin-bottom: 26px;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 32px;
+    color: $color_black;
+
+    @media (max-width: 500px) {
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 24px;
+    }
+}
+
+@mixin filters-title {
+    margin: 0;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 21px;
+    color: $color_grey_shade;
+}
+
+@mixin cooperation-title {
+    margin: 0;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 33px;
+    color: $color_black;
+
+    @media (max-width: 500px) {
+        font-size: 16px;
+        line-height: 22px;
+    }
+}
+
+@mixin btnReset {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+}
+
+@mixin btn {
+    display: inline-block;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    font-weight: 700;
+    color: $color_white;
+    background-color: $color_primary;
+    transition: background-color 0.3s ease-in-out,
+        border 0.3s ease-in-out;
+
+    &:focus-visible {
+        border-color: $primary_shade;
+        background-color: $primary_light;
+    }
+
+    &:hover {
+        background-color: $primary_light;
+    }
+
+    &:active {
+        background-color: $primary_shade;
+    }
+}
+
+@mixin btn-product {
+    display: inline-block;
+    border: 2px solid $color_primary;
+    background-color: transparent;
+    color: $color_primary;
+    border-radius: 10px;
+    font-weight: 700;
+    transition: background-color 0.3s ease-in-out,
+        border 0.3s ease-in-out,
+        color 0.3s ease-in-out;
+
+    &:focus-visible {
+        border-color: $color_primary;
+        background-color: $primary_light;
+        color: $color_white;
+    }
+
+    &:hover {
+        color: $color_white;
+        background-color: $color_primary;
+    }
+
+    &:active {
+        border-color: $primary_shade;
+        background-color: $primary_shade;
+    }
+}
+
+@mixin lkBasket {
+    &__item:not(:last-child) {
+        margin-right: 32px;
+    }
+
+    &__link {
+        position: relative;
+        display: block;
+        height: 100%;
+
+        svg {
+            display: block;
+            height: 100%;
+            width: 100%;
+            fill: $color_primary;
+            transition: fill .3s ease-in-out;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: -4px;
+            right: -4px;
+            bottom: -4px;
+            left: -4px;
+            z-index: -1;
+            background-color: transparent;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        &:focus {
+            svg {
+                fill: $color_white;
+            }
+
+            &::after {
+                background-color: $primary_light;
+            }
+        }
+
+        &:hover {
+            svg {
+                fill: $primary_light;
+            }
+
+            &::after {
+                background-color: transparent;
+            }
+        }
+
+        &:active {
+            svg {
+                fill: $primary_shade;
+            }
+        }
+    }
+}
+
+@mixin burger {
+    $burger-width: 24px;
+    $burger-height: 18px;
+    $burger-line-height: 3px;
+    position: relative;
+    padding: 0;
+    z-index: 11;
+    width: $burger-width;
+    height: $burger-height;
+    color: $color_primary;
+    background-color: transparent;
+    cursor: pointer;
+
+    &__line {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 100%;
+        height: $burger-line-height;
+        background-color: currentColor;
+        transform: translateY(-50%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: $burger-line-height;
+        background-color: currentColor;
+        transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+    }
+
+    &::before {
+        top: -3px;
+    }
+
+    &::after {
+        bottom: -3px;
+    }
+
+    &_active {
+        .burger__line {
+            transform: scale(0);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        &::before {
+            top: 50%;
+            left: 0;
+            transform: rotate(45deg);
+            transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+        }
+
+        &::after {
+            top: 50%;
+            left: 0;
+            transform: rotate(-45deg);
+            transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+        }
+    }
+
+    &:focus::after {
+        opacity: 1;
+    }
+}
+
+@mixin buttonSlider {
+    border: 2px solid $color_primary;
+    border-radius: 100px;
+    width: 32px;
+    height: 32px;
+    color: transparent;
+    background-color: transparent;
+    transition: border-color .3s ease-in-out,
+        background-color .3s ease-in-out;
+
+    svg {
+        position: absolute;
+        stroke: $color_primary;
+        stroke-width: 2;
+        transform: translateY(-50%);
+        transition: stroke .3s ease-in-out;
+    }
+
+    &:focus {
+        background-color: $primary_light;
+    }
+
+    &:hover {
+        background-color: $color_primary;
+    }
+
+    &:active {
+        border-color: $primary_shade;
+        background-color: $primary_shade;
+    }
+
+    &:focus {
+        svg {
+            stroke: $color_white;
+        }
+    }
+
+    &:hover {
+        svg {
+            stroke: $color_white;
+        }
+    }
+}
+
+@mixin check {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+
+    +label {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 21px;
+        color: $color_grey_shade;
+        transform: translateY(2px);
+
+        &:not(:last-child) {
+            margin-bottom: 11px;
+        }
+
+        &::before {
+            content: '';
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 2px;
+            border: 1px solid $color_grey;
+            margin-right: 12px;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: contain;
+        }
+
+        a {
+            color: $color_primary;
+            text-decoration: underline;
+        }
+    }
+
+    &:checked {
+        +label {
+            &::before {
+                background-color: $color_primary;
+                border-color: $color_primary;
+                background-image: url(../img/check.svg);
+            }
+        }
+    }
+}

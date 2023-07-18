@@ -1,0 +1,101 @@
+@import "../variables";
+@import "../mixin";
+
+.similar-products {
+    position: relative;
+    padding-top: 78px;
+    padding-bottom: 70px;
+
+    &__title {
+        position: absolute;
+        margin: 0;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 31px;
+        color: $color_black;
+    }
+
+    &__swiper-button-prev,
+    &__swiper-button-next {
+        @include btnReset;
+        @include buttonSlider;
+        position: static;
+        right: 0;
+        left: 0;
+    }
+
+    &__slide {
+        height: auto;
+        box-sizing: border-box;
+    }
+
+    &__swiper-btn {
+        display: flex;
+        justify-content: end;
+        align-items: flex-end;
+        margin-bottom: 23px;
+        height: 32px;
+    }
+
+    &__swiper-button-prev {
+        margin-right: 13px;
+
+        svg {
+            transform: scale(-1, 1);
+        }
+    }
+
+    &__swiper-button-next {
+        svg {
+            top: 16px;
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .similar-products {
+        padding-top: 67px;
+        padding-bottom: 71px;
+    }
+}
+
+@media (max-width: 768px) {
+    .similar-products {
+        padding-top: 37px;
+        padding-bottom: 68px;
+    }
+}
+
+@media (max-width: 500px) {
+    .similar-products {
+        padding-top: 68px;
+        padding-bottom: 65px;
+
+        &__title {
+            position: relative;
+            margin-bottom: 24px;
+        }
+
+        &__swiper {
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+        }
+
+        &__swiper-button-prev {
+            position: relative;
+        }
+
+        &__swiper-button-next {
+            position: relative;
+
+            svg {
+                top: 50%;
+            }
+        }
+
+        &__swiper-btn {
+            margin-bottom: 20px;
+        }
+    }
+}

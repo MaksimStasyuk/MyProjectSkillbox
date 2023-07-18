@@ -1,0 +1,53 @@
+@import "../variables";
+@import "../mixin";
+
+.breadcrumbs {
+    padding-top: 19px;
+
+    &__list {
+        @include clearListReset;
+        display: flex;
+        align-items: center
+    }
+
+    &__item {
+        position: relative;
+
+        &:not(:last-child) {
+            margin-right: 15px;
+
+            &::after {
+                content: "/";
+                position: absolute;
+                right: -10px;
+                top: 50%;
+                font-size: 14px;
+                color: $color_grey;
+                transform: translateY(-50%)
+            }
+        }
+    }
+
+    &__link {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 14px;
+        color: $color_grey;
+
+        &_current {
+            color: $primary_shade;
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .breadcrumbs {
+        padding-top: 19px;
+    }
+}
+
+@media (max-width: 500px) {
+    .breadcrumbs {
+        display: none;
+    }
+}

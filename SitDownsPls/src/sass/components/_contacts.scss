@@ -1,0 +1,333 @@
+@import "../variables";
+@import "../mixin";
+
+.contacts-page {
+    margin-bottom: 71px;
+
+    &__title {
+        @include title;
+        margin-bottom: 17px;
+
+    }
+
+    &__search {
+        margin-bottom: 32px;
+    }
+
+    &__field {
+        margin-right: 28px;
+        padding: 15px 18px 16px;
+        width: 48.7%;
+        height: 54px;
+        // width: 100%;
+        // height: 100%;
+        border: 1px solid transparent;
+        border-radius: 10px;
+        background-color: $color_grey_light;
+        outline: none;
+        color: $color_black;
+        transition: background-color 0.3s ease-in-out,
+            border-color 0.3s ease-in-out;
+
+        &:focus {
+            border-color: $color_primary;
+            background-color: $color_pink_light;
+        }
+
+        &:hover {
+            background-color: $color_md_grey;
+        }
+
+        &:active {
+            background-color: $color_grey_light;
+            border-color: $color_green_input;
+        }
+
+        &::placeholder {
+            color: $color_grey;
+        }
+    }
+
+    &__btn {
+        @include btnReset;
+        @include btn;
+        padding: 15px 34px;
+        font-weight: 600;
+    }
+
+    &__map {
+        width: 100%;
+        min-height: 510px;
+    }
+}
+
+[class*="copyrights-pane"] {
+    display: none;
+}
+
+[id*="id_166"] {
+    width: 343px !important;
+}
+
+.ymaps-2-1-79-map .ymaps-2-1-79-balloon {
+    top: -297px !important;
+    left: -154px !important;
+    width: 343px;
+    height: 284px;
+    padding: 0;
+    box-shadow: none;
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.25);
+}
+
+.ymaps-2-1-79-balloon__layout {
+    height: 284px;
+    border-radius: 10px;
+}
+
+.ymaps-2-1-79-map .ymaps-2-1-79-balloon .ymaps-2-1-79-balloon__content {
+    padding: 0;
+    margin-right: 0;
+}
+
+.ymaps-2-1-79-balloon__tail:after {
+    top: 76px;
+    left: 80px !important;
+}
+
+.ymaps-2-1-79-balloon__close {
+    margin-top: 21px;
+    margin-right: 19px;
+}
+
+.ymaps-2-1-79-map .ymaps-2-1-79-balloon__close .ymaps-2-1-79-balloon__close-button {
+    position: relative;
+    width: 12px;
+    height: 12px;
+    background: none;
+    opacity: 1;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 5px;
+        width: 6px;
+        height: 6px;
+        border-bottom: 2px solid $color_grey;
+        border-right: 2px solid $color_grey;
+        transform: rotate(135deg);
+        transition: all .2s ease-in-out;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 8px;
+        width: 6px;
+        height: 6px;
+        border-top: 2px solid $color_grey;
+        border-left: 2px solid $color_grey;
+        transform: rotate(135deg);
+        transition: all .2s ease-in-out;
+    }
+}
+
+.balloon {
+    margin: 0;
+    padding: 32px 30px 30px 32px;
+    height: 100%;
+    width: 343px;
+    box-sizing: border-box;
+
+    &__title {
+        margin: 0;
+        margin-bottom: 5px;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 16px;
+        color: $color_black;
+    }
+
+    &__address {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 25px;
+        color: $color_black;
+    }
+
+    &__link {
+        display: inline-block;
+        margin-bottom: 31px;
+        font-size: 14px;
+        line-height: 14px;
+        color: $color_secondary;
+
+        &::before {
+            content: "";
+            display: inline-block;
+
+            width: 17px;
+            height: 17px;
+            background-image: url(../img/tel.svg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-color: transparent;
+            background-size: cover;
+            transform: translate(1px, 3px);
+            transition: background-image .3s ease-in-out;
+        }
+    }
+
+    &__address {
+        margin-bottom: 8px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 25px;
+        color: $color_black;
+    }
+
+    &__clockwork {
+        margin: 0;
+
+        margin-bottom: 22px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 25px;
+        color: $color_black;
+
+        span {
+            padding-left: 4px;
+            color: $color_grey;
+        }
+    }
+
+    &__descr {
+        margin: 0;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 25px;
+        color: $color_black;
+
+        span {
+            // padding-left: 4px;
+            color: $color_grey;
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .contacts-page {
+        margin-bottom: 69px;
+
+        &__title {
+            margin-bottom: 15px;
+        }
+
+        &__field {
+            margin-right: 28px;
+            width: 65.5%;
+        }
+
+        &__btn {
+            padding-top: 16px;
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .contacts-page {
+        margin-bottom: 70px;
+
+        &__field {
+            width: 65%;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .contacts-page {
+        margin-bottom: 70px;
+
+        &__field {
+            margin-right: 0;
+            margin-bottom: 17px;
+            width: 100%;
+        }
+    }
+
+    [id*="id_166"] {
+        width: 232px !important;
+        height: 260px !important;
+    }
+
+    .ymaps-2-1-79-map .ymaps-2-1-79-balloon {
+        // top: -438px !important;
+        // left: 18px !important;
+        width: 232px;
+        height: 260px;
+
+        box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.25);
+    }
+
+    .ymaps-2-1-79-balloon__layout {
+        height: 260px;
+    }
+
+
+    .balloon {
+        padding: 24px 20px 20px 20px;
+        width: 232px;
+
+        &__title {
+            font-size: 14px;
+            line-height: 19px;
+        }
+
+        &__address {
+            font-size: 12px;
+            line-height: 16px;
+        }
+
+        &__link {
+            display: inline-block;
+            margin-bottom: 16px;
+            font-size: 14px;
+            line-height: 14px;
+            color: $color_secondary;
+
+            &::before {
+                content: "";
+                display: inline-block;
+                width: 17px;
+                height: 17px;
+                background-image: url(../img/tel.svg);
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-color: transparent;
+                background-size: cover;
+                transform: translate(1px, 3px);
+                transition: background-image .3s ease-in-out;
+            }
+        }
+
+        &__address {
+            margin-bottom: 8px;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 25px;
+            color: $color_black;
+        }
+
+        &__clockwork {
+            margin-bottom: 16px;
+            font-size: 12px;
+            line-height: 17px;
+        }
+
+        &__descr {
+            font-size: 12px;
+            line-height: 17px;
+        }
+    }
+}

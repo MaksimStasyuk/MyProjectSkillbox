@@ -1,0 +1,118 @@
+@import "../variables";
+@import "../mixin";
+
+.banner {
+    background-image: url("../img/section_banner/banner.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: transparent;
+
+    &__wrapper {
+        padding-top: 155px;
+        padding-bottom: 149px;
+        padding-left: 25px;
+    }
+
+    &__content {
+        width: 40%;
+    }
+
+    &__title {
+        margin: 0;
+        font-family: "PlayfairDisplay";
+        font-weight: 900;
+        font-size: 60px;
+        line-height: 70px;
+        color: $color_gold;         
+    }
+
+    &__distr {
+        margin: 0;
+        margin-bottom: 48px;
+        font-size: 48px;
+        line-height: 59px;
+        color: $color_white;    
+    }
+
+    &__btn {
+        @include btnReset;
+        @include btn;
+        padding: 19px 30px;
+    }
+}
+
+@media (max-width: 1280px) {
+    .banner {
+        background-image: url("../img/section_banner/banner_1024.jpg");
+
+        &__wrapper {            
+            padding-top: 155px;
+            padding-bottom: 150px;
+            padding-left: 36px;
+        }
+
+        &__content {
+            width: 70%;
+        }
+
+        &__distr {
+            margin-bottom: 47px;
+        }
+    }
+}
+
+@media (max-width: 950px) {
+    .banner {        
+        background-image: url("../img/section_banner/banner_768.jpg");
+
+        &__wrapper {
+            padding-bottom: 149px;
+        }
+             
+        &__content {
+            width: 80%;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .banner {
+        padding-bottom: 92px;
+        background-image: none;
+
+        &__wrapper {            
+            position: relative;
+            padding-top: 32px;
+            padding-bottom: 64px;
+            padding-left: 12px;
+            background-image: url("../img/section_banner/banner_320.jpg");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-color: transparent;
+        }
+
+        &__content {           
+            width: 70%;
+        }
+
+        &__title {           
+            font-size: 24px;
+            line-height: 29px;           
+        }
+    
+        &__distr {
+            font-size: 16px;
+            line-height: 19px;
+        }
+
+        &__btn {
+            position: absolute;
+            top: 115%;
+            left: 50%;         
+            padding: 20px 85px 19px;
+            transform: translateX(-50%);            
+        }
+    }
+}

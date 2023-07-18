@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SitDownsPls</title>
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/choices.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/style.min.css">
+    <script src="https://api-maps.yandex.ru/2.1?apikey=035ccaa1-2cd9-49aa-ba52-15aae0e9d1a3&lang=ru_RU"
+        type="text/javascript">
+        </script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__top header-top">
+            <div class="header-top__wrapper">
+                <div class="header-top__left">
+                    <div class="header-top__group">
+                        <span>Ваш регион:</span>
+                        <select class="header-top__choices" name="header-top__choises">
+                            <option value="Москва">Москва</option>
+                            <option value="Казань">Казань</option>
+                            <option value="Уфа">Уфа</option>
+                            <option value="Пермь">Пермь</option>
+                        </select>
+                    </div>
+                    <a class="header-top__tel" href="+74958854547">+7 (495) 885-45-47</a>
+                </div>
+                <div class="header-top__right top-right">
+                    <ul class="top-right__list">
+                        <li class="top-right__item">
+                            <a class="top-right__link" href="#">О компании</a>
+                        </li>
+                        <li class="top-right__item">
+                            <a class="top-right__link" href="#">Гарантия и возврат</a>
+                        </li>
+                        <li class="top-right__item">
+                            <a class="top-right__link" href="#">Корпоративным клиентам</a>
+                        </li>
+                        <li class="top-right__item">
+                            <a class="top-right__link" href="#">Дизайн-решение</a>
+                        </li>
+                    </ul>
+                    <ul class="top-right__lkBasket-1024 lkBasket">
+                        <li class="lkBasket__item">
+                            <a class="lkBasket__link" href="#">
+                                <svg width="26" height="28">
+                                    <use xlink:href="./img/stack/sprite.svg#user"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="lkBasket__item">
+                            <a class="lkBasket__link" href="#">
+                                <svg width="41" height="28">
+                                    <use xlink:href="./img/stack/sprite.svg#basket"></use>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                    <a class="top-right__logo-320" href="#">
+                        <svg width="187" height="27">
+                            <use xlink:href="./img/stack/sprite.svg#logo"></use>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="header__center header-center container">
+            <ul class="header-center__lkBasket-900 lkBasket">
+                <li class="lkBasket__item">
+                    <a class="lkBasket__link" href="#">
+                        <svg width="26" height="28">
+                            <use xlink:href="./img/stack/sprite.svg#user"></use>
+                        </svg>
+                    </a>
+                </li>
+                <li class="lkBasket__item">
+                    <a class="lkBasket__link" href="#">
+                        <svg width="41" height="28">
+                            <use xlink:href="./img/stack/sprite.svg#basket"></use>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+            <a class="header-center__logo" href="#">
+                <svg width="187" height="27">
+                    <use xlink:href="./img/stack/sprite.svg#logo"></use>
+                </svg>
+            </a>
+            <div class="header-center__menu">
+                <button class="burger" aria-label="Открыть меню" aria-hidden="true">
+                    <span class="burger__line"></span>
+                </button>
+                <nav class="header-center__nav nav">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a class="nav__link" href="./catalog.html">Каталог</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="#">Магазины</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="#">Шоу-рум</a>
+                        </li>
+                        <li class="nav__item nav__item_320">
+                            <a class="nav__link" href="#">Доставка и оплата</a>
+                        </li>
+                        <li class="nav__item nav__item_320">
+                            <a class="nav__link" href="#">Дисконт</a>
+                        </li>
+                        <li class="nav__item nav__item_320">
+                            <a class="nav__link" href="#">Контакты</a>
+                        </li>
+                    </ul>
+                    <div class="header-center__burger-bottom burger-bottom">
+                        <ul class="burger-bottom__list">
+                            <li class="burger-bottom__item">
+                                <a class="burger-bottom__link" href="#">О компании</a>
+                            </li>
+                            <li class="burger-bottom__item">
+                                <a class="burger-bottom__link" href="#">Корпоративным клиентам</a>
+                            </li>
+                            <li class="burger-bottom__item">
+                                <a class="burger-bottom__link" href="#">Гарантия и возврат</a>
+                            </li>
+                            <li class="burger-bottom__item">
+                                <a class="burger-bottom__link" href="#">Дизайн-решение</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="header__bottom header-bottom container">
+            <form class="header-bottom__form" action="https://jsonplaceholder.typicode.com/todos" method="post">
+                <label>
+                    <input class="header-bottom__field" type="text" name="search" placeholder="Я хочу купить..."
+                        autocomplete="off" />
+                    <svg class="header-bottom__svg-search" width="20" height="20">
+                        <use xlink:href="./img/stack/sprite.svg#search"></use>
+                    </svg>
+                </label>
+                <button class="header-bottom__btn" aria-label="Я хочу купить">
+                    <svg width="7" height="12" fill="none">
+                        <use xlink:href="./img/stack/sprite.svg#arrow"></use>
+                    </svg>
+                </button>
+                <select class="header-bottom__choices">
+                    <option value=" ">Категория</option>
+                    <option value="Диваны">Диваны</option>
+                    <option value="Кресла">Кресла</option>
+                    <option value="Пуфы">Пуфы</option>
+                    <option value="Кровати">Кровати</option>
+                    <option value="Тумбы">Тумбы</option>
+                    <option value="Комоды">Комоды</option>
+                    <option value="Стулья">Стулья</option>
+                    <option value="Столы">Столы</option>
+                    <option value="Аксессуары">Аксессуары</option>
+                </select>
+            </form>
+            <ul class="header-bottom__lkBasket lkBasket">
+                <li class="lkBasket__item">
+                    <a class="lkBasket__link" href="#">
+                        <svg width="26" height="28" fill="none">
+                            <use xlink:href="./img/stack/sprite.svg#user"></use>
+                        </svg>
+                    </a>
+                </li>
+                <li class="lkBasket__item">
+                    <a class="lkBasket__link" href="#">
+                        <svg width="41" height="28">
+                            <use xlink:href="./img/stack/sprite.svg#basket"></use>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="header__breadcrumbs breadcrumbs container">
+            <ul class="breadcrumbs__list">
+                <li class="breadcrumbs__item"><a href="./index.html" class="breadcrumbs__link"
+                        aria-label="Перейти на главную страницу">Главная</a></li>
+                <li class="breadcrumbs__item"><a class="breadcrumbs__link breadcrumbs__link_current"
+                        aria-label="Перейти на страницу контакты">Контакты</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section class="container contacts-page">
+            <div class="contacts-page__content">
+                <h1 class="contacts-page__title">Контакты</h1>
+                <div class="contacts-page__search">
+                    <input class="contacts-page__field" id="suggest" type="text" placeholder="Поиск магазина"
+                        aria-label="Введите название магазина">
+                    <button class="contacts-page__btn" id="button" aria-label="Начать поиск">Поиск</button>
+                </div>
+                <div class="contacts-page__map" id="map"></div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer__top">
+            <div class="footer__wrapper container">
+                <div class="footer__left">
+                    <a class="footer__logo" href="#">
+                        <svg width="187" height="27">
+                            <use xlink:href="./img/stack/sprite.svg#logo"></use>
+                        </svg>
+                    </a>
+                    <ul class="footer__social footer-social">
+                        <li class="footer-social__item">
+                            <a class="footer-social__link" href="#">
+                                <svg width="30" height="30">
+                                    <use xlink:href="./img/stack/sprite.svg#fb"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="footer-social__item">
+                            <a class="footer-social__link" href="#">
+                                <svg width="30" height="30">
+                                    <use xlink:href="./img/stack/sprite.svg#vk"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="footer-social__item">
+                            <a class="footer-social__link" href="#">
+                                <svg width="30" height="30">
+                                    <use xlink:href="./img/stack/sprite.svg#instagram"></use>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__right">
+                    <ul class="footer__menu footer-menu">
+                        <li class="footer-menu__item">
+                            <h3 class="footer-menu__title">
+                                <a href="#">О нас</a>
+                            </h3>
+                            <ul class="footer__submenu footer-submenu">
+                                <li class="footer-submenu__item">
+                                    <a class="footer-submenu__link" href="#">О компании</a>
+                                </li>
+                                <li class="footer-submenu__item">
+                                    <a class="footer-submenu__link" href="#">Блог</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="footer-menu__item">
+                            <h3 class="footer-menu__title">
+                                <a href="#">Услуги</a>
+                            </h3>
+                            <ul class="footer__submenu footer-submenu">
+                                <li class="footer-submenu__item">
+                                    <a class="footer-submenu__link" href="#">Доставка</a>
+                                </li>
+                                <li class="footer-submenu__item">
+                                    <a class="footer-submenu__link" href="#">Рассрочка и кредит</a>
+                                </li>
+                                <li class="footer-submenu__item">
+                                    <a class="footer-submenu__link" href="#">Сборка и установка</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="footer-menu__item">
+                            <h3 class="footer-menu__title">
+                                <a href="#">Связь с нами</a>
+                            </h3>
+                            <ul class="footer__submenu footer-submenu">
+                                <li class="footer-submenu__item">
+                                    <a class="footer-submenu__link" href="#">Обратная связь</a>
+                                </li>
+                                <li class="footer-submenu__item">
+                                    <a class="footer-submenu__link" href="#">Контакты</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="footer-menu__item">
+                            <h3 class="footer-menu__title">
+                                <a href="#">Сотрудничество</a>
+                            </h3>
+                            <ul class="footer__submenu footer-submenu">
+                                <li class="footer-submenu__item">
+                                    <a class="footer-submenu__link" href="#">Поставщикам</a>
+                                </li>
+                                <li class="footer-submenu__item">
+                                    <a class="footer-submenu__link" href="#">Оптовикам</a>
+                                </li>
+                                <li class="footer-submenu__item">
+                                    <a class="footer-submenu__link" href="#">Карьера</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer__copyright">
+            <p>SDP® 2011-2021</p>
+        </div>
+    </footer>
+
+    <script src="./js/vendor/choices.min.js"></script>
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script src="./js/vendor/just-validate.min.js"></script>
+    <script src="./js/main.min.js"></script>
+</body>
+
+</html>

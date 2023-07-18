@@ -1,0 +1,160 @@
+@import "../variables";
+@import "../mixin";
+
+.useful {
+    position: relative;
+    padding-top: 69px;
+
+    &__title {
+        @include title;
+        position: absolute;
+    }
+
+    &__swiper {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+    }
+
+    &__swiper-btn {
+        display: flex;
+        justify-content: end;
+        align-items: flex-end;
+        margin-bottom: 26px;
+        height: 32px;
+    }
+
+    &__swiper-button-prev,
+    &__swiper-button-next {
+        @include btnReset;
+        @include buttonSlider;
+        position: static;
+        right: 0;
+        left: 0;
+    }
+
+    &__swiper-button-prev {
+        margin-right: 13px;
+
+        svg {
+            transform: scale(-1, 1);
+        }
+    }
+
+    &__swiper-button-next {
+        svg {
+            top: 16px;
+        }
+    }
+
+    &__slide {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        border-radius: 10px;
+        background-color: $color_grey_light;
+    }
+
+    &__content {
+        height: 100%;
+    }
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+
+    &__image {
+        img {
+            height: auto;
+            width: 100%;
+            object-fit: fill;
+        }
+    }
+
+    &__inner {
+        flex: 1 1 auto;
+        display: inline-flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 30px;
+        padding-top: 27px;
+    }
+
+    &__title {
+        flex: 1 1 auto;
+        margin: 0;
+        margin-bottom: 38px;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 33px;
+        color: $color_black;
+    }
+
+    &__btn {
+        @include btnReset;
+        @include btn-product;
+        padding: 15px 32px;
+    }
+}
+
+@media (max-width: 1366px) {
+    .useful {
+        padding-top: 72px;
+    }
+
+    .content {
+        &__title {
+            margin-bottom: 30px;
+            font-size: 16px;
+            line-height: 22px;
+        }
+
+        &__btn {
+            padding: 16px 32px 15px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .useful {
+        padding-top: 70px;
+    }
+}
+
+@media (max-width: 500px) {
+    .useful {
+        padding-top: 79px;
+
+        &__title {
+            position: relative;
+            margin-bottom: 26px;
+        }
+
+        &__swiper {
+            flex-direction: column-reverse;
+            align-items: center;
+        }
+
+        &__swiper-button-prev,
+        &__swiper-button-next {
+            position: relative;
+            top: 0;
+        }
+
+        &__swiper-btn {
+            margin: 0;
+        }
+
+        &__swiper-wrapper {
+            margin-bottom: 16px;
+        }
+    }
+
+    .content {
+        &__btn {
+            padding: 16px 32px 15px;
+        }
+    }
+}

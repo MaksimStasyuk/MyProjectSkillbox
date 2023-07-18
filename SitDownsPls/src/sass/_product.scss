@@ -1,0 +1,134 @@
+.product {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: $color_grey_light;
+    height: 100%;
+
+    &__image {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        margin: 0 -17px 15px;
+        min-height: 161px;
+
+        img {
+            display: block;
+        }
+    }
+
+    &__title {
+        flex: 1 1 auto;
+        margin: 0;
+        margin-bottom: 24px;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 31px;
+        color: $color_black;
+
+        a {
+            display: block;
+            height: 100%;
+        }
+    }
+
+    &__btn {
+        @include btnReset;
+        @include btn-product;
+        align-self: flex-start;
+        padding: 16px 32px;
+    }
+
+    &__price {
+        display: flex;
+        align-items: center;
+        margin-bottom: 22px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 21px;
+        color: $color_grey;
+    }
+
+    &__rating {
+        position: absolute;
+        top: 31px;
+        left: 30px;
+        display: inline-flex;
+        align-items: center;
+        color: $color_secondary;
+
+        svg {
+            margin-right: 5px;
+            width: 16px;
+            height: 15px
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .product {
+        &_320 {
+            padding: 16px;
+            padding-top: 32px;
+        }
+
+        &__image {
+            &_320 {
+                margin: 0 0 1px;
+                align-items: center;
+                min-height: 110px;
+            }
+        }
+
+        &__title {
+            &_320 {
+                margin-bottom: 16px;
+                font-size: 16px;
+                line-height: 21px;
+            }
+        }
+
+        &__btn {
+            &_320 {
+                align-self: center;
+                padding: 9px 22px;
+            }
+        }
+
+        &__price {
+            &_320 {
+                margin-bottom: 15px;
+            }
+        }
+
+        &__rating {
+            &_320 {
+                top: 16px;
+                left: 16px;
+                font-size: 12px;
+                line-height: 16px;
+
+                svg {
+                    width: 13px;
+                    height: 12px
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 320px) {
+    .product {
+        &__image {
+            &_320 {
+                min-height: 75px;
+            }
+        }
+
+        &__image_D-31 {
+            padding-top: 17px;
+        }
+    }
+}
